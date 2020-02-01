@@ -1,6 +1,7 @@
 package TennisGame;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -45,4 +46,12 @@ public class TennisGameTest {
 		assertEquals(0, secondPlayer.getGameScore());
 	}
 
+	@Test
+	public void gameScoreShouldBeLoveAllWhenGameStarts() {
+		firstPlayer.setGameScore(0);
+		secondPlayer.setGameScore(0);
+		assertEquals("Love-All", tennisGame.getGameScore());
+	}
+
+	
 }
