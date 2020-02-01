@@ -2,27 +2,32 @@ package TennisGame;
 
 public class TennisGame {
 
+	public static final String GAME_WINS = " Wins";
+	public static final String GAME_ADV = " Advantage";
+	public static final String GAME_DEUCE = " Deuce";
+	public static final String GAME_ALL = " All";
+
 	int playerOneScore;
 	int playerTwoScore;
 
-	public String getGameScore(Player firstPlayer, Player secondPlayer) {
+	public String getGameResult(Player firstPlayer, Player secondPlayer) {
 		playerOneScore = firstPlayer.getGameScore();
 		playerTwoScore = secondPlayer.getGameScore();
 		if (playerOneScore >= 4 || playerTwoScore >= 4) {
 			if (isWinner()) {
-				return getTopScorer(firstPlayer, secondPlayer) + " Wins";
+				return getTopScorer(firstPlayer, secondPlayer) + GAME_WINS;
 			}
 		}
 		if (isAdvantage()) {
-			return getTopScorer(firstPlayer, secondPlayer) + " Advantage";
+			return getTopScorer(firstPlayer, secondPlayer) + GAME_ADV;
 		}
 
 		if (isDeuce()) {
-			return "Deuce";
+			return GAME_DEUCE;
 		}
 
 		if (addAllToScore()) {
-			return firstPlayer.getScoreValue() + "-" + "All";
+			return firstPlayer.getScoreValue() + "-" + GAME_ALL;
 		}
 		return firstPlayer.getScoreValue() + "," + secondPlayer.getScoreValue();
 	}

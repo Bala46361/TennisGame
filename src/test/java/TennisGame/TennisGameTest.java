@@ -50,90 +50,90 @@ public class TennisGameTest {
 	public void gameScoreShouldBeLoveAllWhenGameStarts() {
 		firstPlayer.setGameScore(0);
 		secondPlayer.setGameScore(0);
-		assertEquals("Love-All", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Love-All", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
 
 	@Test
 	public void checkFirstPlayerTakesFirstPoint() {
 		firstPlayer.setGameScore(1);
 		secondPlayer.setGameScore(0);
-		assertEquals("Fifteen,Love", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Fifteen,Love", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
 
 	@Test
 	public void checkScenarioForSecondPlayerTakesFirstPointAfterFirstPlayer() {
 		firstPlayer.setGameScore(1);
 		secondPlayer.setGameScore(1);
-		assertEquals("Fifteen-All", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Fifteen-All", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
 
 	@Test
 	public void gameScoreShouldBeThirtyCommaFifteenWhenFirstPlayerTakesAnotherPoint() {
 		firstPlayer.setGameScore(2);
 		secondPlayer.setGameScore(1);
-		assertEquals("Thirty,Fifteen", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Thirty,Fifteen", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
 
 	@Test
 	public void gameScoreShouldBeThirtyAllWhenSecondPlayerAlsoGetsSecondPointAfterFirstPlayer() {
 		firstPlayer.setGameScore(2);
 		secondPlayer.setGameScore(2);
-		assertEquals("Thirty-All", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Thirty-All", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
 
 	@Test
 	public void playerOneWinsFirstTwoBalls() {
 		firstPlayer.setGameScore(2);
 		secondPlayer.setGameScore(0);
-		assertEquals("Thirty,Love", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Thirty,Love", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
 
 	@Test
 	public void playerOneWinsFirstThreeBalls() {
 		firstPlayer.setGameScore(3);
 		secondPlayer.setGameScore(0);
-		assertEquals("Forty,Love", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Forty,Love", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
 
 	@Test
 	public void firstPlayerWinsTheGame() {
 		firstPlayer.setGameScore(4);
 		secondPlayer.setGameScore(0);
-		assertEquals("Bala Wins", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Bala Wins", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
 
 	@Test
 	public void secondPlayerWinsTheGame() {
 		firstPlayer.setGameScore(0);
 		secondPlayer.setGameScore(4);
-		assertEquals("Ajith Wins", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Ajith Wins", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
 
 	@Test
 	public void firstPlayerOnAdvantage() {
 		firstPlayer.setGameScore(4);
 		secondPlayer.setGameScore(3);
-		assertEquals("Bala Advantage", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Bala Advantage", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
 
 	@Test
 	public void secondPlayerOnAdvantage() {
 		firstPlayer.setGameScore(3);
 		secondPlayer.setGameScore(4);
-		assertEquals("Ajith Advantage", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Ajith Advantage", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
 
 	@Test
 	public void bothPlayersInDeuce() {
 		firstPlayer.setGameScore(3);
 		secondPlayer.setGameScore(3);
-		assertEquals("Deuce", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Deuce", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
-	
+
 	@Test
 	public void bothPlayersScoresTwoPoints() {
 		firstPlayer.setGameScore(2);
 		secondPlayer.setGameScore(2);
-		assertEquals("Thirty-All", tennisGame.getGameScore(firstPlayer, secondPlayer));
+		assertEquals("Thirty-All", tennisGame.getGameResult(firstPlayer, secondPlayer));
 	}
 }
