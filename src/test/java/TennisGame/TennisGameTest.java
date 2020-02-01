@@ -13,10 +13,12 @@ public class TennisGameTest {
 	Player secondPlayer;
 
 	@Before
-	public void configuringObjectCreation() {
+	public void basicSetUpForStartingGame() {
 		tennisGame = new TennisGame();
 		firstPlayer = new Player();
 		secondPlayer = new Player();
+		firstPlayer.setPlayerName("Bala");
+		secondPlayer.setPlayerName("Ajith");
 	}
 
 	@Test
@@ -32,8 +34,6 @@ public class TennisGameTest {
 
 	@Test
 	public void shouldAllowToSetTwoPlayerNames() {
-		firstPlayer.setPlayerName("Bala");
-		secondPlayer.setPlayerName("Ajith");
 		assertEquals("Bala", firstPlayer.getPlayerName());
 		assertEquals("Ajith", secondPlayer.getPlayerName());
 	}
@@ -50,8 +50,6 @@ public class TennisGameTest {
 	public void gameScoreShouldBeLoveAllWhenGameStarts() {
 		firstPlayer.setGameScore(0);
 		secondPlayer.setGameScore(0);
-		firstPlayer.setPlayerName("Bala");
-		secondPlayer.setPlayerName("Ajith");
 		assertEquals("Love-All", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
 
@@ -59,17 +57,13 @@ public class TennisGameTest {
 	public void checkFirstPlayerTakesFirstPoint() {
 		firstPlayer.setGameScore(1);
 		secondPlayer.setGameScore(0);
-		firstPlayer.setPlayerName("Bala");
-		secondPlayer.setPlayerName("Ajith");
 		assertEquals("Fifteen,Love", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
-	
+
 	@Test
 	public void checkScenarioForSecondPlayerTakesFirstPointAfterFirstPlayer() {
 		firstPlayer.setGameScore(1);
 		secondPlayer.setGameScore(1);
-		firstPlayer.setPlayerName("Bala");
-		secondPlayer.setPlayerName("Ajith");
 		assertEquals("Fifteen-All", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
 
