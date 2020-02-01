@@ -67,4 +67,11 @@ public class TennisGameTest {
 		assertEquals("Fifteen-All", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
 
+	@Test
+	public void gameScoreShouldBeThirtyCommaFifteenWhenFirstPlayerTakesAnotherPoint() {
+		firstPlayer.setGameScore(2);
+		secondPlayer.setGameScore(1);
+		assertEquals("Thirty,Fifteen", tennisGame.getGameScore(firstPlayer, secondPlayer));
+	}
+
 }
