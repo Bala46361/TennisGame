@@ -9,9 +9,8 @@ public class TennisGame {
 		playerOneScore = firstPlayer.getGameScore();
 		playerTwoScore = secondPlayer.getGameScore();
 		if (playerOneScore >= 4 || playerTwoScore >= 4) {
-			if (Math.abs(playerTwoScore - playerOneScore) >= 2) {
-				return (firstPlayer.getGameScore() > secondPlayer.getGameScore())
-						? firstPlayer.getPlayerName() + " Wins" : secondPlayer.getPlayerName() + " Wins";
+			if (isWinner()) {
+				return getWinnerName(firstPlayer, secondPlayer);
 			}
 		}
 		if (addAllToScore()) {
@@ -27,4 +26,18 @@ public class TennisGame {
 			return false;
 		}
 	}
+
+	public boolean isWinner() {
+		if (Math.abs(playerTwoScore - playerOneScore) >= 2) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public String getWinnerName(Player firstPlayer, Player secondPlayer) {
+		return playerOneScore > playerTwoScore ? firstPlayer.getPlayerName() + " Wins"
+				: secondPlayer.getPlayerName() + " Wins";
+	}
+
 }
