@@ -4,8 +4,8 @@ public class TennisGame {
 
 	public static final String GAME_WINS = " Wins";
 	public static final String GAME_ADV = " Advantage";
-	public static final String GAME_DEUCE = " Deuce";
-	public static final String GAME_ALL = " All";
+	public static final String GAME_DEUCE = "Deuce";
+	public static final String GAME_ALL = "All";
 
 	int playerOneScore;
 	int playerTwoScore;
