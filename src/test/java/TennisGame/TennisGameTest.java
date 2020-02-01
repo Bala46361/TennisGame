@@ -37,4 +37,12 @@ public class TennisGameTest {
 		assertEquals("Ajith", secondPlayer.getPlayerName());
 	}
 
+	@Test
+	public void shouldAllowToSetScoresForTwoPlayers() {
+		firstPlayer.setGameScore(0);
+		secondPlayer.setGameScore(0);
+		assertEquals(0, firstPlayer.getGameScore());
+		assertEquals(0, secondPlayer.getGameScore());
+	}
+
 }
