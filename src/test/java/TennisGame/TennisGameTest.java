@@ -1,6 +1,6 @@
 package TennisGame;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -27,6 +27,14 @@ public class TennisGameTest {
 	public void shouldCreateInstanceForTwoPlayers() {
 		assertNotNull(firstPlayer);
 		assertNotNull(secondPlayer);
+	}
+
+	@Test
+	public void shouldAllowToSetTwoPlayerNames() {
+		firstPlayer.setPlayerName("Bala");
+		secondPlayer.setPlayerName("Ajith");
+		assertEquals("Bala", firstPlayer.getPlayerName());
+		assertEquals("Ajith", secondPlayer.getPlayerName());
 	}
 
 }
