@@ -14,12 +14,10 @@ public class Player {
 	}
 
 	public int getGameScore() {
-		// TODO Auto-generated method stub
 		return gameScore;
 	}
 
 	public void setGameScore(int gameScore) {
-		// TODO Auto-generated method stub
 		this.gameScore = gameScore;
 	}
 
