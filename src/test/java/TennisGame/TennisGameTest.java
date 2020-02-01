@@ -18,6 +18,13 @@ public class TennisGameTest {
 	public void validateObjectInstanceforNotNull() {
 		assertNotNull(tennisGame);
 	}
-
+	
+	@Test
+	public void shouldCreateInstanceForTwoPlayers() {
+		Player firstPlayer = new Player();
+		Player secondPlayer= new Player();
+		assertNotNull(firstPlayer);
+		assertNotNull(secondPlayer);
+	}
 
 }
