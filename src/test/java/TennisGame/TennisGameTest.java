@@ -74,4 +74,10 @@ public class TennisGameTest {
 		assertEquals("Thirty,Fifteen", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
 
+	@Test
+	public void gameScoreShouldBeThirtyAllWhenSecondPlayerAlsoGetsSecondPointAfterFirstPlayer() {
+		firstPlayer.setGameScore(2);
+		secondPlayer.setGameScore(2);
+		assertEquals("Thirty-All", tennisGame.getGameScore(firstPlayer, secondPlayer));
+	}
 }
