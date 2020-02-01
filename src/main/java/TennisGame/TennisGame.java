@@ -10,12 +10,12 @@ public class TennisGame {
 		playerTwoScore = secondPlayer.getGameScore();
 		if (playerOneScore >= 4 || playerTwoScore >= 4) {
 			if (isWinner()) {
-				return getWinnerName(firstPlayer, secondPlayer) + " Wins";
+				return getTopScorer(firstPlayer, secondPlayer) + " Wins";
 			}
 		}
 
 		if (isAdvantage()) {
-			return getWinnerName(firstPlayer, secondPlayer) + " Advantage";
+			return getTopScorer(firstPlayer, secondPlayer) + " Advantage";
 		}
 
 		if (addAllToScore()) {
@@ -50,7 +50,7 @@ public class TennisGame {
 		}
 	}
 
-	public String getWinnerName(Player firstPlayer, Player secondPlayer) {
+	public String getTopScorer(Player firstPlayer, Player secondPlayer) {
 		return playerOneScore > playerTwoScore ? firstPlayer.getPlayerName() : secondPlayer.getPlayerName();
 	}
 
