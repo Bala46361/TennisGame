@@ -1,6 +1,9 @@
 package TennisGame;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Before;
+import org.junit.Test;
 
 public class TennisGameTest {
 
@@ -10,5 +13,11 @@ public class TennisGameTest {
 	public void configuringObjectCreation() {
 		tennisGame = new TennisGame();
 	}
+	
+	@Test
+	public void validateObjectInstanceforNotNull() {
+		assertNotNull(tennisGame);
+	}
+
 
 }
