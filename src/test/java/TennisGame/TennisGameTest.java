@@ -4,9 +4,11 @@ import org.junit.Before;
 
 public class TennisGameTest {
 
+	TennisGame tennisGame;
+
 	@Before
 	public void configuringObjectCreation() {
-		TennisGame tennisGame = new TennisGame();
+		tennisGame = new TennisGame();
 	}
 
 }
