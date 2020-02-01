@@ -50,7 +50,9 @@ public class TennisGameTest {
 	public void gameScoreShouldBeLoveAllWhenGameStarts() {
 		firstPlayer.setGameScore(0);
 		secondPlayer.setGameScore(0);
-		assertEquals("Love-All", tennisGame.getGameScore(firstPlayer,secondPlayer));
+		firstPlayer.setPlayerName("Bala");
+		secondPlayer.setPlayerName("Ajith");
+		assertEquals("Love-All", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
 
 	@Test
@@ -59,7 +61,7 @@ public class TennisGameTest {
 		secondPlayer.setGameScore(0);
 		firstPlayer.setPlayerName("Bala");
 		secondPlayer.setPlayerName("Ajith");
-		assertEquals("Fifteen,Love", tennisGame.getGameScore(firstPlayer,secondPlayer));
+		assertEquals("Fifteen,Love", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
 
 }
