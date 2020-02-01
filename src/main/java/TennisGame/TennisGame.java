@@ -18,6 +18,10 @@ public class TennisGame {
 			return getTopScorer(firstPlayer, secondPlayer) + " Advantage";
 		}
 
+		if (isDeuce()) {
+			return "Deuce";
+		}
+
 		if (addAllToScore()) {
 			return firstPlayer.getScoreValue() + "-" + "All";
 		}
@@ -48,6 +52,13 @@ public class TennisGame {
 		} else {
 			return false;
 		}
+	}
+
+	public boolean isDeuce() {
+		if (playerOneScore >= playerTwoScore && playerTwoScore >= 3) {
+			return true;
+		}
+		return false;
 	}
 
 	public String getTopScorer(Player firstPlayer, Player secondPlayer) {
