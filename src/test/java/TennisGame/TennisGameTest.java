@@ -115,4 +115,11 @@ public class TennisGameTest {
 		secondPlayer.setGameScore(3);
 		assertEquals("Bala Advantage", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
+
+	@Test
+	public void secondPlayerOnAdvantage() {
+		firstPlayer.setGameScore(3);
+		secondPlayer.setGameScore(4);
+		assertEquals("Ajith Advantage", tennisGame.getGameScore(firstPlayer, secondPlayer));
+	}
 }
