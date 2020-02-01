@@ -122,11 +122,18 @@ public class TennisGameTest {
 		secondPlayer.setGameScore(4);
 		assertEquals("Ajith Advantage", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
-	
+
 	@Test
 	public void bothPlayersInDeuce() {
 		firstPlayer.setGameScore(3);
 		secondPlayer.setGameScore(3);
 		assertEquals("Deuce", tennisGame.getGameScore(firstPlayer, secondPlayer));
+	}
+	
+	@Test
+	public void bothPlayersScoresTwoPoints() {
+		firstPlayer.setGameScore(2);
+		secondPlayer.setGameScore(2);
+		assertEquals("Thirty-All", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
 }

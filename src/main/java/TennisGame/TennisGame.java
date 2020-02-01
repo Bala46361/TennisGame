@@ -13,7 +13,6 @@ public class TennisGame {
 				return getTopScorer(firstPlayer, secondPlayer) + " Wins";
 			}
 		}
-
 		if (isAdvantage()) {
 			return getTopScorer(firstPlayer, secondPlayer) + " Advantage";
 		}
