@@ -80,4 +80,12 @@ public class TennisGameTest {
 		secondPlayer.setGameScore(2);
 		assertEquals("Thirty-All", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
+
+	@Test
+	public void playerTwoWinsFirstTwoBalls() {
+		firstPlayer.setGameScore(2);
+		secondPlayer.setGameScore(0);
+		assertEquals("Thirty,Love", tennisGame.getGameScore(firstPlayer, secondPlayer));
+	}
 }
+
