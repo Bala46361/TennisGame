@@ -63,5 +63,14 @@ public class TennisGameTest {
 		secondPlayer.setPlayerName("Ajith");
 		assertEquals("Fifteen,Love", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
+	
+	@Test
+	public void checkScenarioForSecondPlayerTakesFirstPointAfterFirstPlayer() {
+		firstPlayer.setGameScore(1);
+		secondPlayer.setGameScore(1);
+		firstPlayer.setPlayerName("Bala");
+		secondPlayer.setPlayerName("Ajith");
+		assertEquals("Fifteen-All", tennisGame.getGameScore(firstPlayer, secondPlayer));
+	}
 
 }
