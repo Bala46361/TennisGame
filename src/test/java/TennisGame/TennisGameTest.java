@@ -82,10 +82,16 @@ public class TennisGameTest {
 	}
 
 	@Test
-	public void playerTwoWinsFirstTwoBalls() {
+	public void playerOneWinsFirstTwoBalls() {
 		firstPlayer.setGameScore(2);
 		secondPlayer.setGameScore(0);
 		assertEquals("Thirty,Love", tennisGame.getGameScore(firstPlayer, secondPlayer));
 	}
-}
 
+	@Test
+	public void playerOneWinsFirstThreeBalls() {
+		firstPlayer.setGameScore(3);
+		secondPlayer.setGameScore(0);
+		assertEquals("Forty,Love", tennisGame.getGameScore(firstPlayer, secondPlayer));
+	}
+}
